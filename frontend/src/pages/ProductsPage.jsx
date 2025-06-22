@@ -31,6 +31,8 @@ const mockProducts = [
 
 
 const ProductsPage = () => {
+
+  const [addOpen, setAddOpen] = useState(false);
   const [products, setProducts] = useState(mockProducts);
   const navigate = useNavigate();
   const [openConfirm, setOpenConfirm] = useState(false); 
@@ -45,6 +47,35 @@ const ProductsPage = () => {
     price: '',
     description: '',
   })
+  const [newProduct, setNewProduct] = useState({
+    id: null,
+    category: '',
+    name: '',
+    quantity: '',
+    price: '',
+    description: '',
+  });
+
+  const handleAddChange = (e) => {
+    const { name, value } = e.target;
+    setNewProduct((prev) => ({ ...prev, [name]: value }));
+  };
+  const handleAddSubmit = () => {
+  const newId = products.length ? Math.max(...products.map(p => p.id)) + 1 : 1;
+  const productToAdd = { ...newProduct, id: newId };
+
+  setProducts(prev => [...prev, productToAdd]);
+  setNewProduct({
+    id: null,
+    category: '',
+    name: '',
+    quantity: '',
+    price: '',
+    description: '',
+  });
+  setAddOpen(false);
+};
+
 
   const handleEditOpen = (product) => {
     setEditedProduct(product)
@@ -95,10 +126,11 @@ const ProductsPage = () => {
       <Button
         variant="contained"
         color="primary"
-        onClick={() => alert('Тут буде модалка для додавання продукту')}
+        onClick={() => setAddOpen(true)}
       >
         Додати продукт
       </Button>
+
     </Box>
 
     <TableContainer component={Paper}>
@@ -162,12 +194,26 @@ const ProductsPage = () => {
 
    
     <EditProductModal
+      open={addOpen}
+      onClose={() => setAddOpen(false)}
+      onSubmit={handleAddSubmit}
+      product={newProduct}
+      onChange={handleAddChange}
+      isEdit={false}
+    />
+
+    <EditProductModal
       open={editOpen}
       onClose={() => setEditOpen(false)}
       onSubmit={handleEditSubmit}
       product={editedProduct}
       onChange={handleEditChange}
+      isEdit={true}
     />
+
+
+
+    
   </Box>
 );
 
