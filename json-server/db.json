@@ -1,0 +1,22 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Бургер",
+      "category": "Fast Food",
+      "quantity": 10,
+      "price": 99,
+      "description": "Смачний бургер",
+      "photo": "https://via.placeholder.com/150"
+    },
+    {
+      "id": 2,
+      "name": "Шаурма",
+      "category": "Fast Food",
+      "quantity": 15,
+      "price": 79,
+      "description": "Ароматна шаурма",
+      "photo": "https://via.placeholder.com/150"
+    }
+  ]
+}

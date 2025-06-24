@@ -12,12 +12,14 @@ import {
 } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
 
-const EditProductModal = ({open, onClose, onSubmit, product, onChange}) => {
-    return (
+const EditProductModal = ({ open, onClose, onSubmit, product, onChange, isEdit }) => {
+  return (
     <Dialog open={open} onClose={onClose} maxWidth="sm" fullWidth>
       <Box p={2} position="relative">
         <DialogTitle>
-          <Typography variant="h6" fontWeight="bold">Edit product</Typography>
+          <Typography variant="h6" fontWeight="bold">
+            {isEdit ? 'Edit product' : 'Add product'}
+          </Typography>
         </DialogTitle>
 
         <IconButton
@@ -70,6 +72,14 @@ const EditProductModal = ({open, onClose, onSubmit, product, onChange}) => {
             margin="normal"
             name="description"
             value={product.description}
+            onChange={onChange}
+          />
+          <TextField
+            label="Photo URL"
+            fullWidth
+            margin="normal"
+            name="photo"
+            value={product.photo}
             onChange={onChange}
           />
         </DialogContent>

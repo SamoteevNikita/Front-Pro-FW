@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios'; 
 import {
   Box,
   Button,
@@ -23,17 +24,9 @@ import { useNavigate } from 'react-router-dom';
 import EditProductModal from '../components/EditProductModal';
 
 
-const mockProducts = [
-  { id: 1, name: 'Бургер', category: 'Fast Food', quantity: 10, price: 99, description: 'Смачний бургер' },
-  { id: 2, name: 'Шаурма', category: 'Fast Food', quantity: 15, price: 79, description: 'Ароматна шаурма' },
-  { id: 3, name: 'Лапша', category: 'Asian', quantity: 20, price: 69, description: 'Тепла лапша' },
-];
-
-
 const ProductsPage = () => {
-
+  const [ products, setProducts] = useState([])
   const [addOpen, setAddOpen] = useState(false);
-  const [products, setProducts] = useState(mockProducts);
   const navigate = useNavigate();
   const [openConfirm, setOpenConfirm] = useState(false); 
   const [productToDelete, setProductToDelete] = useState(null);
@@ -55,6 +48,12 @@ const ProductsPage = () => {
     price: '',
     description: '',
   });
+
+  useEffect(() => {
+    axios.get('http://localhost:3001/products')
+      .then(res => setProducts(res.data))
+      .catch(err => console.error('Помилка отримання продуктів:', err));
+  }, []);
 
   const handleAddChange = (e) => {
     const { name, value } = e.target;
