@@ -3,19 +3,82 @@
     {
       "id": 1,
       "name": "Бургер",
-      "category": "Fast Food",
+      "category": "Фастфуд",
       "quantity": 10,
       "price": 99,
-      "description": "Смачний бургер",
+      "description": "Классический бургер с сочной котлетой и свежими овощами.",
       "photo": "https://via.placeholder.com/150"
     },
     {
       "id": 2,
       "name": "Шаурма",
-      "category": "Fast Food",
+      "category": "Фастфуд",
       "quantity": 15,
       "price": 79,
-      "description": "Ароматна шаурма",
+      "description": "Ароматная шаурма с курицей, овощами и фирменным соусом.",
+      "photo": "https://via.placeholder.com/150"
+    },
+    {
+      "id": 3,
+      "name": "Пицца Маргарита",
+      "category": "Итальянская кухня",
+      "quantity": 8,
+      "price": 180,
+      "description": "Традиционная пицца с томатным соусом, моцареллой и базиликом.",
+      "photo": "https://via.placeholder.com/150"
+    },
+    {
+      "id": 4,
+      "name": "Картофель фри",
+      "category": "Гарниры",
+      "quantity": 25,
+      "price": 45,
+      "description": "Золотистый картофель фри, идеально подходит к любому блюду.",
+      "photo": "https://via.placeholder.com/150"
+    },
+    {
+      "id": 5,
+      "name": "Куриные наггетсы",
+      "category": "Закуски",
+      "quantity": 20,
+      "price": 65,
+      "description": "Сочные куриные наггетсы с хрустящей корочкой.",
+      "photo": "https://via.placeholder.com/150"
+    },
+    {
+      "id": 6,
+      "name": "Цезарь салат",
+      "category": "Салаты",
+      "quantity": 12,
+      "price": 120,
+      "description": "Легкий салат Цезарь с курицей, свежими овощами и гренками.",
+      "photo": "https://via.placeholder.com/150"
+    },
+    {
+      "id": 7,
+      "name": "Чизкейк",
+      "category": "Десерты",
+      "quantity": 7,
+      "price": 110,
+      "description": "Нежный сливочный чизкейк с ягодным соусом.",
+      "photo": "https://via.placeholder.com/150"
+    },
+    {
+      "id": 8,
+      "name": "Лапша WOK с овощами",
+      "category": "Азиатская кухня",
+      "quantity": 10,
+      "price": 95,
+      "description": "Ароматная лапша WOK с миксом свежих овощей и соусом терияки.",
+      "photo": "https://via.placeholder.com/150"
+    },
+    {
+      "id": 9,
+      "name": "Лимонад домашний",
+      "category": "Напитки",
+      "quantity": 30,
+      "price": 50,
+      "description": "Освежающий домашний лимонад с натуральными фруктами.",
       "photo": "https://via.placeholder.com/150"
     }
   ]
