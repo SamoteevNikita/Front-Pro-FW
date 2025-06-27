@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { fetchProducts } from './thunk'; 
+import { fetchProducts } from './thunk';
 
 const initialState = {
     item: [],
@@ -13,15 +13,15 @@ const productsSlice = createSlice ({
     reducers: {
         addProduct: (state, action) => {
             state.item.push(action.payload)
-        }, 
+        },
         updateProduct: (state, action) => {
-            const index = state.items.findIndex(p => p.id === action.payload.id);
+            const index = state.item.findIndex(p => p.id === action.payload.id); 
             if (index !== -1) {
-                state.items[index] = action.payload;
+                state.item[index] = action.payload; 
             }
         },
         deleteProduct: (state, action) => {
-        state.items = state.items.filter(p => p.id !== action.payload);
+        state.item = state.item.filter(p => p.id !== action.payload); 
         }
     },
     extraReducers: builder => {
@@ -32,12 +32,12 @@ const productsSlice = createSlice ({
             })
             .addCase(fetchProducts.fulfilled, (state, action) => {
                 state.loading = false
-                state.items = action.payload
+                state.item = action.payload 
             })
             .addCase(fetchProducts.rejected, (state, action) => {
                 state.loading = false
                 state.error = action.payload || 'ошибка при загрузке продуктов'
-            })  
+            })
     }
 })
 

@@ -1,28 +1,26 @@
 import { useSelector, useDispatch } from 'react-redux';
 import {
-  fetchProducts,
-  addProduct,
-  updateProduct,
-  deleteProduct
+ fetchProducts,
 } from '../redux/products/thunk';
+import { addProduct, updateProduct, deleteProduct } from '../redux/products/productsSlice'; 
 import React, { useEffect, useState } from 'react';
 import {
   Box,
-  Button,
-  Table,
-  TableBody,
-  TableCell,
-  TableContainer,
-  TableHead,
-  TableRow,
-  Paper,
-  IconButton,
-  Typography,
-  Dialog,
-  DialogTitle,
-  DialogContent,
-  DialogContentText,
-  DialogActions,
+ Button,
+ Table,
+ TableBody,
+ TableCell,
+ TableContainer,
+ TableHead,
+ TableRow,
+ Paper,
+ IconButton,
+ Typography,
+ Dialog,
+ DialogTitle,
+ DialogContent,
+ DialogContentText,
+ DialogActions,
 } from '@mui/material';
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
