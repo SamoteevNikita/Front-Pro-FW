@@ -8,7 +8,7 @@ const PreviewPage = () => {
   const [ products, setProducts ] = useState([])
 
   useEffect(() => {
-    axios.get('http://localhost:3001/products')
+    axios.get('http://localhost:3000/products')
       .then(res => setProducts(res.data))
       .catch(err => console.error('Помилка завантаження продуктів', err));
   }, [])
